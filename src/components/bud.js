@@ -3,7 +3,7 @@ import { useFrame } from "react-three-fiber";
 import { useSpring, a } from "react-spring/three";
 import { softShadows, MeshWobbleMaterial, OrbitControls, Box } from "drei";
 
-const CylinderContainer = ({ position, color, speed, args }) => {
+const Bud = ({ position, color, speed, args }) => {
     const mesh = useRef();
 
     //useFrame allows us to re-render/update rotation on each frame
@@ -15,6 +15,9 @@ const CylinderContainer = ({ position, color, speed, args }) => {
     const props = useSpring({
       scale: expand ? [1.4, 1.4, 1.4] : [1, 1, 1],
     });
+
+    args = [0.5,0.5,16,8,1,3]
+
     return (
       <a.mesh
         position={position}
@@ -22,7 +25,7 @@ const CylinderContainer = ({ position, color, speed, args }) => {
         onClick={() => setExpand(!expand)}
         scale={props.scale}
         castShadow>
-        <cylinderBufferGeometry attach='geometry' args={args} />
+        <torusKnotBufferGeometry attach='geometry' args={args} />
         <MeshWobbleMaterial
           color={color}
           speed={speed}
@@ -43,4 +46,4 @@ const CylinderContainer = ({ position, color, speed, args }) => {
     );
 };
 
-export default CylinderContainer;
+export default Bud;

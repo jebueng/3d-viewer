@@ -10,7 +10,7 @@ import "./App.scss";
 // React Spring
 import { useSpring, a } from "react-spring/three";
 import CylinderContainer from "./components/cylinder_container";
-
+import Bud from "./components/bud";
 // soft Shadows
 softShadows();
 
@@ -93,11 +93,11 @@ const App = () => {
           </mesh>
           <CylinderContainer
             position={[0, 1, 0]}
-            color='lightgreen'
-            args={[1, 1, 1, 9]}
+            color='lightgrey'
+            args={[1.5, 1.5, 3, 10]}
             speed={0.1}
           />
-          <SpinningMesh position={[-2, 1, -5]} color='green' speed={6} />
+          <Bud position={[-2, 1, -5]} color='green' speed={6} />
           <SpinningMesh position={[5, 1, -2]} color='pink' speed={6} />
         </group>
         {/* Allows us to move the canvas around for different prespectives */}
