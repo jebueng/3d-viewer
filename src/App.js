@@ -9,6 +9,7 @@ import Header from "./components/header";
 import "./App.scss";
 // React Spring
 import { useSpring, a } from "react-spring/three";
+import CylinderContainer from "./components/cylinder_container";
 
 // soft Shadows
 softShadows();
@@ -33,12 +34,12 @@ const SpinningMesh = ({ position, color, speed, args }) => {
       onClick={() => setExpand(!expand)}
       scale={props.scale}
       castShadow>
-      <boxBufferGeometry attach='geometry' args={args} />
+      <cylinderBufferGeometry attach='geometry' args={args} />
       <MeshWobbleMaterial
         color={color}
         speed={speed}
         attach='material'
-        factor={0.6}
+        factor={0.1}
       />
     </a.mesh>
 
@@ -90,13 +91,13 @@ const App = () => {
             <planeBufferGeometry attach='geometry' args={[100, 100]} />
             <shadowMaterial attach='material' opacity={0.3} />
           </mesh>
-          <SpinningMesh
+          <CylinderContainer
             position={[0, 1, 0]}
-            color='lightblue'
-            args={[3, 2, 1]}
-            speed={2}
+            color='lightgreen'
+            args={[1, 1, 1, 9]}
+            speed={0.1}
           />
-          <SpinningMesh position={[-2, 1, -5]} color='pink' speed={6} />
+          <SpinningMesh position={[-2, 1, -5]} color='green' speed={6} />
           <SpinningMesh position={[5, 1, -2]} color='pink' speed={6} />
         </group>
         {/* Allows us to move the canvas around for different prespectives */}
