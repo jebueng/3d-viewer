@@ -1,8 +1,11 @@
 # 3D Viewer
 
 A tool for visualizing product and container dimensions.
+- [ ] Create Quarter model for reference
 
 - [ ] Create model viwer menu
+  - [ ] Menu
+  - [ ] view state machine
 - [ ] Create model view
 - [ ] Include dimension & information
     - [ ] Volume
